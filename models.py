@@ -13,7 +13,7 @@ class Playlist(db.Model):
     __tablename__ = 'playlists'
 
     id = db.Column(db.Integer,
-                   primary_key=True, autocincrement=True)
+                   primary_key=True, autoincrement=True)
     name = db.Column(db.String(30),
                      nullable=False)
     description = db.Column(db.Text,
@@ -31,7 +31,7 @@ class Song(db.Model):
     title = db.Column(db.String(30),
                       nullable=False)
     artist = db.Column(db.String(30),
-                       nuallbe=False)
+                       nullable=False)
 
 
 class PlaylistSong(db.Model):
@@ -39,7 +39,7 @@ class PlaylistSong(db.Model):
 
     # ADD THE NECESSARY CODE HERE
 
-    __tablename__ = 'playlists'
+    __tablename__ = 'playlists_songs'
 
     id = db.Column(db.Integer,
                    primary_key=True, autoincrement=True)

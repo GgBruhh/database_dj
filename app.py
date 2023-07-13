@@ -1,6 +1,4 @@
 from flask import Flask, redirect, render_template
-from flask_debugtoolbar import DebugToolbarExtension
-
 from models import db, connect_db, Playlist, Song, PlaylistSong
 from forms import NewSongForPlaylistForm, SongForm, PlaylistForm
 
@@ -19,7 +17,6 @@ app.config['SECRET_KEY'] = "I'LL NEVER TELL!!"
 #
 # app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
 
-debug = DebugToolbarExtension(app)
 
 
 @app.route("/")
