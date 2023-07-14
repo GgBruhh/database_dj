@@ -32,6 +32,7 @@ class Song(db.Model):
                       nullable=False)
     artist = db.Column(db.String(30),
                        nullable=False)
+    playlist = db.relationship('Playlist', secondary='playlists_songs', backref='songs')
 
 
 class PlaylistSong(db.Model):
@@ -47,6 +48,7 @@ class PlaylistSong(db.Model):
                             nullable=False)
     song_id = db.Column(db.ForeignKey('songs.id'),
                         nullable=False)
+    
 
 
 # DO NOT MODIFY THIS FUNCTION

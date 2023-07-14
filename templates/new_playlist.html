@@ -2,6 +2,23 @@
 
 {% block content %}
 
-<h1>Add a form that when submitted creates a new playlist!</h1>
+<h1>Make a new playlist!</h1>
+
+<form method="POST">
+    {{form.hidden_tag()}}
+    {% for field in form 
+        if field.widget.input_type != 'hidden' %}
+    <div class="form-group">
+        {{field.label}}
+        {{field (class_='form-control')}}
+
+        {% for error in field.error %}
+        {{error}}
+        {% endfor %}
+    </div>
+    {% endfor %}
+
+    <button type="submit" class="btn btn-primary">Create Playlist</button>
+</form>
 
 {% endblock %}
